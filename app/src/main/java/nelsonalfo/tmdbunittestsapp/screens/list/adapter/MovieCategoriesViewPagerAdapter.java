@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import nelsonalfo.tmdbunittestsapp.models.Constants;
-import nelsonalfo.tmdbunittestsapp.screens.list.MoviesCategoryFragment;
+import nelsonalfo.tmdbunittestsapp.screens.list.MoviesTabFragment;
 
 
 /**
@@ -17,16 +17,16 @@ public class MovieCategoriesViewPagerAdapter extends FragmentPagerAdapter {
     private static final int POPULAR_TAB = 1;
     private static final int UPCOMING_TAB = 2;
 
-    private MoviesCategoryFragment popularMoviesFragment;
-    private MoviesCategoryFragment topRatedMoviesFragment;
-    private MoviesCategoryFragment upcomingFragment;
+    private MoviesTabFragment popularMoviesFragment;
+    private MoviesTabFragment topRatedMoviesFragment;
+    private MoviesTabFragment upcomingFragment;
 
     public MovieCategoriesViewPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
 
-        popularMoviesFragment = MoviesCategoryFragment.newInstance(Constants.MOST_POPULAR_MOVIES);
-        topRatedMoviesFragment = MoviesCategoryFragment.newInstance(Constants.TOP_RATED_MOVIES);
-        upcomingFragment = MoviesCategoryFragment.newInstance(Constants.UPCOMING_MOVIES);
+        popularMoviesFragment = MoviesTabFragment.newInstance(Constants.MOST_POPULAR_MOVIES);
+        topRatedMoviesFragment = MoviesTabFragment.newInstance(Constants.TOP_RATED_MOVIES);
+        upcomingFragment = MoviesTabFragment.newInstance(Constants.UPCOMING_MOVIES);
     }
 
     @Override

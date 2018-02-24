@@ -1,9 +1,8 @@
 package nelsonalfo.tmdbunittestsapp.api;
 
 /**
- * Created by nelso on 28/12/2017.
+ * Diferentes status y codigos de error que pueden devolver como respuesta las consultas a las apis REST
  */
-
 public interface ApiStatus {
     String NO_RESULT = "NO_RESULT";
     String SERVER_ERROR = "SERVER_ERROR";

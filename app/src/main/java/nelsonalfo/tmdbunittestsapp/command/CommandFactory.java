@@ -8,9 +8,9 @@ import nelsonalfo.tmdbunittestsapp.models.Constants;
 
 
 /**
- * Created by nelso on 28/12/2017.
+ * Esta clase implementa el patron de diseño Factory para generar un comando ya configurado para la consulta que se desee realizar.
+ * Los comando no se deben instanciar directamente, se debe hacer uso de esta Fabrica
  */
-
 public class CommandFactory {
     private static final String EXCEPTION_MESSAGE = "Cant create the command without a TheMovieDbRestApi instance";
 

@@ -21,14 +21,14 @@ import nelsonalfo.tmdbunittestsapp.util.TmdbConfigurationUtil;
  * Created by nelso on 27/12/2017.
  */
 
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> implements Filterable {
+public class MoviesRecyclerViewAdapter extends RecyclerView.Adapter<MoviesViewHolder> implements Filterable {
     private TmdbConfigurationUtil configurationUtil;
     private List<MovieResume> dataSet;
     private List<MovieResume> filteredDataSet;
     private Listener listener;
 
 
-    public MoviesAdapter(TmdbConfigurationUtil configurationUtil, List<MovieResume> movies) {
+    public MoviesRecyclerViewAdapter(TmdbConfigurationUtil configurationUtil, List<MovieResume> movies) {
         filteredDataSet = new ArrayList<>(movies);
 
         this.configurationUtil = configurationUtil;

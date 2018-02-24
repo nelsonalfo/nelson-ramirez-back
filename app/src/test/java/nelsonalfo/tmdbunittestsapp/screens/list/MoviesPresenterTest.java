@@ -32,12 +32,12 @@ import static org.mockito.MockitoAnnotations.initMocks;
  * Created by nelso on 27/12/2017.
  */
 @RunWith(PowerMockRunner.class)
-public class MovieListPresenterTest {
+public class MoviesPresenterTest {
     private static final String FAIL_EXCEPTION_MESSAGE = "Is expected to throw an IllegalArgumentException";
     private static final String EXPECTED_EXCEPTION_MESSAGE = "All the params are needed";
 
     @Mock
-    MovieListContract.View view;
+    MoviesContract.View view;
     @Mock
     private GetMoviesCommand moviesCommand;
     @Mock
@@ -45,19 +45,19 @@ public class MovieListPresenterTest {
     @Captor
     private ArgumentCaptor<List<MovieResume>> moviesArgumentCaptor;
 
-    private MovieListPresenter presenter;
+    private MoviesPresenter presenter;
 
 
     @Before
     public void setUp() throws Exception {
         initMocks(this);
 
-        presenter = new MovieListPresenter(view, moviesCommand, configCommand);
+        presenter = new MoviesPresenter(view, moviesCommand, configCommand);
     }
 
     @Test
     public void createPresenter_allParamsAreSet_initializePresenter() throws Exception {
-        presenter = new MovieListPresenter(view, moviesCommand, configCommand);
+        presenter = new MoviesPresenter(view, moviesCommand, configCommand);
 
         verify(moviesCommand).setListener(eq(presenter));
         verify(configCommand).setListener(eq(presenter));
@@ -66,7 +66,7 @@ public class MovieListPresenterTest {
     @Test
     public void createPresenter_noViewSet_throwException() throws Exception {
         try {
-            presenter = new MovieListPresenter(null, moviesCommand, configCommand);
+            presenter = new MoviesPresenter(null, moviesCommand, configCommand);
             Assert.fail(FAIL_EXCEPTION_MESSAGE);
         } catch (IllegalArgumentException ex) {
             assertThat(ex).hasMessageThat().isEqualTo(EXPECTED_EXCEPTION_MESSAGE);
@@ -76,7 +76,7 @@ public class MovieListPresenterTest {
     @Test
     public void createPresenter_noGetMoviesCommandSet_throwException() throws Exception {
         try {
-            presenter = new MovieListPresenter(view, null, configCommand);
+            presenter = new MoviesPresenter(view, null, configCommand);
             Assert.fail(FAIL_EXCEPTION_MESSAGE);
         } catch (IllegalArgumentException ex) {
             assertThat(ex).hasMessageThat().isEqualTo(EXPECTED_EXCEPTION_MESSAGE);
@@ -86,7 +86,7 @@ public class MovieListPresenterTest {
     @Test
     public void createPresenter_noGetConfigurationCommandSet_throwException() throws Exception {
         try {
-            presenter = new MovieListPresenter(view, moviesCommand, null);
+            presenter = new MoviesPresenter(view, moviesCommand, null);
             Assert.fail(FAIL_EXCEPTION_MESSAGE);
         } catch (IllegalArgumentException ex) {
             assertThat(ex).hasMessageThat().isEqualTo(EXPECTED_EXCEPTION_MESSAGE);

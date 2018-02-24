@@ -1,13 +1,19 @@
 package nelsonalfo.tmdbunittestsapp.command;
 
 /**
- * Created by nelso on 27/12/2017.
+ * Interface que deben implementar todas las clases que deseen ser comandos, la cual cuenta con metodos
+ * para ejecutar el comando y para recibir una respuesta
  */
-
-public interface Command<T> {
+public interface Command {
+    /**
+     * Metodo para ejecutar el comando
+     */
     void execute();
 
-    interface Listener{
+    /**
+     * Listener para procesar la respuesta que pueda recibir el comandom por ejemplo despues de consultar una api
+     */
+    interface Listener {
         void notifyError(String errorStatus);
     }
 }

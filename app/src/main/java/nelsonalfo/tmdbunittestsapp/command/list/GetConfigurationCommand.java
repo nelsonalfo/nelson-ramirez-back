@@ -15,9 +15,11 @@ import retrofit2.Response;
 
 
 /**
- * Created by nelso on 30/12/2017.
+ * Comando que se encarga de consultar a la api de Configuration la cual tiene informacion de como mostrar
+ * las imagenes que devuelven las consultas a las apis de peliculas procesando la respuesta que obtiene de la api
+ * para hacerla mas manejable a sus clientes, por ejemplo un Presenter
  */
-public class GetConfigurationCommand implements Command<TmdbConfiguration>, Callback<TmdbConfiguration> {
+public class GetConfigurationCommand implements Command, Callback<TmdbConfiguration> {
     private static final String EXCEPTION_MESSAGE = "An instance of TheMovieDbRestApi and an instance of GetConfigurationCommand.Listener are required";
 
     private final TheMovieDbRestApi service;

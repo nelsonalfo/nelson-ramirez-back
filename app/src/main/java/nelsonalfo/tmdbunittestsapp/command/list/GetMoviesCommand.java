@@ -17,10 +17,10 @@ import retrofit2.Response;
 
 
 /**
- * Created by nelso on 27/12/2017.
+ * Comando que se encarga de consultar a la api de Top Rated Movies, Upcoming Movies y Most Popular Movies
+ * procesando la respuesta que obtiene de la api para hacerla mas manejable a sus clientes, por ejemplo un Presenter
  */
-
-public class GetMoviesCommand implements Command<List<MovieResume>>, Callback<MoviesResponse> {
+public class GetMoviesCommand implements Command, Callback<MoviesResponse> {
     private static final String EXCEPTION_MESSAGE = "An instance of TheMovieDbRestApi and an instance of GetMoviesCommand.Listener are required";
 
     private final TheMovieDbRestApi service;

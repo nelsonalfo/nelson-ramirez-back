@@ -10,7 +10,7 @@ import retrofit2.http.Query;
 
 
 /**
- * Created by nelso on 26/12/2017.
+ * Definicion de las apis REST de TMDb
  */
 public interface TheMovieDbRestApi {
     @GET("discover/movie")

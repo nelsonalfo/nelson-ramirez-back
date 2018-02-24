@@ -31,7 +31,7 @@ import nelsonalfo.tmdbunittestsapp.models.Constants;
 import nelsonalfo.tmdbunittestsapp.models.MovieResume;
 import nelsonalfo.tmdbunittestsapp.models.TmdbConfiguration;
 import nelsonalfo.tmdbunittestsapp.screens.detail.MovieDetailActivity;
-import nelsonalfo.tmdbunittestsapp.screens.list.adapter.MoviesAdapter;
+import nelsonalfo.tmdbunittestsapp.screens.list.adapter.MoviesRecyclerViewAdapter;
 import nelsonalfo.tmdbunittestsapp.util.TmdbConfigurationUtil;
 
 
@@ -39,21 +39,21 @@ import nelsonalfo.tmdbunittestsapp.util.TmdbConfigurationUtil;
  * Created by nelso on 23/2/2018.
  */
 
-public class MoviesCategoryFragment extends Fragment implements MovieListContract.View, MoviesAdapter.Listener {
+public class MoviesTabFragment extends Fragment implements MoviesContract.View, MoviesRecyclerViewAdapter.Listener {
     @BindView(R.id.movie_list)
     RecyclerView recyclerView;
 
     private String movieCategory;
     private TmdbConfigurationUtil configurationUtil;
-    private MovieListContract.Presenter presenter;
-    private MoviesAdapter adapter;
+    private MoviesContract.Presenter presenter;
+    private MoviesRecyclerViewAdapter adapter;
 
 
-    public MoviesCategoryFragment() {
+    public MoviesTabFragment() {
     }
 
-    public static MoviesCategoryFragment newInstance(String category) {
-        MoviesCategoryFragment fragment = new MoviesCategoryFragment();
+    public static MoviesTabFragment newInstance(String category) {
+        MoviesTabFragment fragment = new MoviesTabFragment();
         fragment.movieCategory = category;
 
         return fragment;
@@ -74,7 +74,7 @@ public class MoviesCategoryFragment extends Fragment implements MovieListContrac
         final GetMoviesCommand moviesCommand = getCommandForGivenCategory(service);
         final GetConfigurationCommand configCommand = CommandFactory.createGetConfigurationCommand(service);
 
-        setPresenter(new MovieListPresenter(this, moviesCommand, configCommand));
+        setPresenter(new MoviesPresenter(this, moviesCommand, configCommand));
 
         presenter.callApi();
 
@@ -93,7 +93,7 @@ public class MoviesCategoryFragment extends Fragment implements MovieListContrac
     }
 
     @Override
-    public void setPresenter(MovieListContract.Presenter presenter) {
+    public void setPresenter(MoviesContract.Presenter presenter) {
         this.presenter = presenter;
         presenter.callApi();
     }
@@ -122,7 +122,7 @@ public class MoviesCategoryFragment extends Fragment implements MovieListContrac
     @Override
     public void showMovies(List<MovieResume> movies) {
         if (configurationUtil != null) {
-            adapter = new MoviesAdapter(configurationUtil, movies);
+            adapter = new MoviesRecyclerViewAdapter(configurationUtil, movies);
             adapter.setListener(this);
 
             recyclerView.setAdapter(adapter);

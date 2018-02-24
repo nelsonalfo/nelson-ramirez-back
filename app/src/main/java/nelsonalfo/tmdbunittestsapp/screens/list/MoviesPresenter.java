@@ -13,13 +13,13 @@ import nelsonalfo.tmdbunittestsapp.models.TmdbConfiguration;
  * Created by nelso on 27/12/2017.
  */
 
-public class MovieListPresenter implements MovieListContract.Presenter, GetMoviesCommand.Listener, GetConfigurationCommand.Listener {
-    private MovieListContract.View view;
+public class MoviesPresenter implements MoviesContract.Presenter {
+    private MoviesContract.View view;
     private final GetMoviesCommand moviesCommand;
     private final GetConfigurationCommand configCommand;
 
 
-    public MovieListPresenter(MovieListContract.View view, GetMoviesCommand moviesCommand, GetConfigurationCommand configCommand) throws IllegalArgumentException {
+    public MoviesPresenter(MoviesContract.View view, GetMoviesCommand moviesCommand, GetConfigurationCommand configCommand) throws IllegalArgumentException {
         if (view == null || moviesCommand == null || configCommand == null) {
             throw new IllegalArgumentException("All the params are needed");
         }

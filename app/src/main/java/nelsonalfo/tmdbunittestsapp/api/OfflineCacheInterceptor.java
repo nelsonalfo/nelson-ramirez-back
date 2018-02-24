@@ -10,9 +10,8 @@ import okhttp3.Response;
 
 
 /**
- * Created by nelso on 23/2/2018.
+ * Interceptor que se encarga de realizar una consulta a la cache en caso de que se este offline
  */
-
 public class OfflineCacheInterceptor implements Interceptor {
     private static final int ONE_DAY_IN_MINUTES = 60 * 60 * 24;
 

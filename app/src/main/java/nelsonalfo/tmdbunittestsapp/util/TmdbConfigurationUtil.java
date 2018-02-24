@@ -4,9 +4,9 @@ import nelsonalfo.tmdbunittestsapp.models.TmdbConfiguration;
 
 
 /**
- * Created by nelso on 31/12/2017.
+ * Clase utilitaria para poder mostrar las imagenes devueltas por las consutas a las apis de peliculas haciendo
+ * uso de los datos devueltos por la api Configuration
  */
-
 public class TmdbConfigurationUtil {
     private final TmdbConfiguration configuration;
 

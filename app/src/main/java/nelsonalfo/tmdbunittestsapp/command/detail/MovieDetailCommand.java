@@ -15,7 +15,8 @@ import retrofit2.Response;
 
 
 /**
- * Created by nelso on 31/12/2017.
+ * Comando que se encarga de consultar a la api que devuelve el detalle de una pelicula procesando la respuesta
+ * que obtiene de la api para hacerla mas manejable a sus clientes, por ejemplo un Presenter
  */
 public class MovieDetailCommand implements Command, Callback<MovieDetail> {
     private static final String EXCEPTION_MESSAGE = "An instance of TheMovieDbRestApi and an instance of MovieDetailCommand.Listener are required";

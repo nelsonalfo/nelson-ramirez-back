@@ -12,7 +12,7 @@ import nelsonalfo.tmdbunittestsapp.R;
 import nelsonalfo.tmdbunittestsapp.screens.list.adapter.MovieCategoriesViewPagerAdapter;
 
 
-public class MovieListActivity extends AppCompatActivity {
+public class MoviesActivity extends AppCompatActivity {
     @BindView(R.id.movie_categories_view_pager)
     ViewPager viewPager;
 

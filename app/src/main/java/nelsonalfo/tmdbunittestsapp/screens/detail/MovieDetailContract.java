@@ -5,10 +5,12 @@ import nelsonalfo.tmdbunittestsapp.models.MovieDetail;
 
 
 /**
- * Created by nelso on 31/12/2017.
+ * Contrato en entra la vista y el presentador de la pantalla de Detalle de una Pelicula
  */
-
 public interface MovieDetailContract {
+    /**
+     * Interface que debe implementar la vista para interactuar con el presentador
+     */
     interface View {
         void setPresenter(Presenter presenter);
 
@@ -21,8 +23,10 @@ public interface MovieDetailContract {
         void finishAndShowUnknownErrorMessage();
     }
 
+    /**
+     * Interface que debe implementar el presentador para interactuar con la vista
+     */
     interface Presenter extends MovieDetailCommand.Listener {
-
         void callApi();
     }
 }
