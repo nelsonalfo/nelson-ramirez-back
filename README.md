@@ -51,3 +51,17 @@ La aplicación sigue la arquitectura MVP:
 - `MoviesPresenterTest`: tests para la clase `MoviesPresenter`
 - `TmdbConfigurationUtilTest`: tests para la clase `TmdbConfigurationUtil`
 
+## En qué consiste el principio de responsabilidad única? Cuál es su propósito?
+
+Este principio indica que cada clase debe tener una sola responsabildiad y que la misma debe esta contenida en una sola clase. Esto permite que el mantenimiento de la app sea mas facil de realizar, ademas hace que la aplicacion sea mas facil de testear con pruebas unitarias, y tambien permite que la aplicacion se pueda extender mas facilmente porque solo seria modificar una pequeña parte de toda la app, la cual es lo suficientemente independiente para no afectar el funcionamiento de otros componentes
+ 
+## Qué características tiene, según su opinión, un “buen” código o código limpio?
+
+Considero que un "buen" codigo o codigo "limpio", debe tener estas caracteristicas por lo menos:
+
+- Debe ser testeable, a traves de pruebas unitarias, esto permite hacer nuestro codigo sea confiable y permite detectar "code smells" es decir, deficiencias en nuestro codigo, como por ejemplo la falta de inyeccion de dependencias
+- Debe ser facil de leer, por lo que los nombres de los metodos y clases deben ser bastante expresivos y relacionados con el contexto donde se este usando
+- Debe ser "corto", en el sentido de que una clase no deberia tener miles de lineas de codigo. Ya eso denota un "code smell" indicando que muy probablemente no este cumpliento el principio de responsabilidad unica. Consideo que una clase en general deberia tener menos de 500 linas de codigo 
+- Lo metodos dentro de una clase tambien deben ser cortos y adecuados al contexto que se este manejando, considero que a lo mucho 20 lineas de codigo funcinal debe tener un metodo
+- Debe seguir una arquitectura clara que permita desacoplar las funcinalidades 
+
